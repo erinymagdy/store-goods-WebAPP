@@ -8,12 +8,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace store__goods_WebAPP
+namespace StoreGoodsWebAPP
 {
     public class Startup
     {
@@ -29,6 +30,7 @@ namespace store__goods_WebAPP
         {
             services.AddControllers();
             services.AddHttpContextAccessor();
+            services.AddPersistence(Configuration);
             //To avoid the MultiPartBodyLength error
             services.Configure<FormOptions>(o =>
             {
