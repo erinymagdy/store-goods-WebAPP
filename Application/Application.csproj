@@ -5,7 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
+    <Compile Remove="Context\ApplicationDbContext.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Context\" />
   </ItemGroup>
 
 </Project>
